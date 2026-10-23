@@ -11,6 +11,10 @@
   --blue: #80b9ff;
   --blue-bright: #b4d7ff;
   --signal: #d4e8fa;
+  --radius-small: 6px;
+  --radius-control: 8px;
+  --radius-card: 12px;
+  --radius-panel: 16px;
 }
 
 @theme inline {
@@ -110,6 +114,7 @@ a:focus-visible {
   aspect-ratio: 1;
   place-items: center;
   border: 1px solid #4b6a88;
+  border-radius: var(--radius-small);
   color: var(--blue-bright);
   font-family: var(--font-geist-mono), monospace;
   font-size: 14px;
@@ -142,6 +147,7 @@ a:focus-visible {
   gap: 3px;
   padding: 4px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-control);
   background: var(--surface);
 }
 
@@ -151,6 +157,7 @@ a:focus-visible {
   min-height: 36px;
   place-items: center;
   padding-inline: 8px;
+  border-radius: var(--radius-small);
   font-family: var(--font-geist-mono), monospace;
   font-size: 13px;
 }
@@ -259,6 +266,7 @@ a:focus-visible {
   justify-content: center;
   gap: 18px;
   padding: 0 19px;
+  border-radius: var(--radius-control);
   font-size: 15px;
   font-weight: 650;
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
@@ -324,6 +332,7 @@ a:focus-visible {
   min-height: 480px;
   overflow: hidden;
   border: 1px solid #35485d;
+  border-radius: var(--radius-panel);
   background-color: var(--surface);
   background-image:
     linear-gradient(rgb(128 185 255 / 4%) 1px, transparent 1px),
@@ -419,6 +428,7 @@ a:focus-visible {
   gap: 5px;
   padding: 14px 15px;
   border: 1px solid #40556c;
+  border-radius: var(--radius-control);
   background: #151f2a;
   box-shadow: 0 8px 22px rgb(0 0 0 / 18%);
 }
@@ -736,6 +746,7 @@ a:focus-visible {
   flex-direction: column;
   padding: 21px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-card);
   background: #111923;
 }
 
@@ -794,6 +805,7 @@ a:focus-visible {
   min-width: 0;
   padding: 21px;
   border: 1px solid var(--line);
+  border-radius: var(--radius-card);
   background: var(--surface);
 }
 
@@ -813,6 +825,7 @@ a:focus-visible {
 .stack-group li {
   padding: 6px 10px;
   border: 1px solid #354657;
+  border-radius: var(--radius-small);
   color: var(--muted);
   font-size: 16px;
   line-height: 1.5;
