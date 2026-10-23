@@ -90,7 +90,7 @@ export type PortfolioCopy = {
 export const dictionaries = {
   en: {
     metadata: {
-      title: "Guilherme S. | Mobile Software Engineer",
+      title: "Guilherme S.",
       description:
         "Mobile software engineer focused on Flutter, Dart, and reliable product experiences.",
     },
@@ -244,7 +244,7 @@ export const dictionaries = {
   },
   pt: {
     metadata: {
-      title: "Guilherme S. | Engenheiro de Software Mobile",
+      title: "Guilherme S.",
       description:
         "Engenheiro de software mobile com foco em Flutter, Dart e experiências de produto confiáveis.",
     },
@@ -398,7 +398,7 @@ export const dictionaries = {
   },
   de: {
     metadata: {
-      title: "Guilherme S. | Mobile-Softwareentwickler",
+      title: "Guilherme S.",
       description:
         "Mobile-Softwareentwickler mit Schwerpunkt auf Flutter, Dart und zuverlässigen Produkterlebnissen.",
     },
