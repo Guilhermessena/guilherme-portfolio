@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { PortfolioCopy } from "../../app/[lang]/dictionaries";
 import { CaseStudyDialog } from "./interactive-elements";
 
@@ -34,15 +35,18 @@ export function ExperienceSection({ copy }: { copy: PortfolioCopy["experience"] 
         <SectionLabel>{copy.eyebrow}</SectionLabel>
         <div className="section-content">
           <h2 id="experience-title">{copy.title}</h2>
-          <details className="experience-entry">
+          <details className="experience-entry" open>
             <summary className="entry-toggle">
               <span className="entry-heading-copy">
                 <span className="entry-role" role="heading" aria-level={3}>{copy.role}</span>
                 <span className="entry-company">
-                  <svg aria-hidden="true" className="xp-company-mark" focusable="false" viewBox="0 0 152 168">
-                    <path d="m150.1 166.4-49.1-85.1 47.1-81.5h-51l-21.6 37.4-21.6-37.4h-49l46.1 79.8-50.1 86.8h51l24.6-42.6 24.6 42.6z" />
-                  </svg>
-                  {copy.company}
+                  <Image
+                    alt={copy.company}
+                    className="xp-company-logo"
+                    height={168}
+                    src="/xp-inc-logo.svg"
+                    width={819}
+                  />
                 </span>
               </span>
               <span className="entry-type">{copy.specialtyLabel}</span>

@@ -768,16 +768,14 @@ button:focus-visible {
 .entry-company {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
-  color: var(--blue-bright);
-  font-size: 16px;
 }
 
-.xp-company-mark {
-  width: 15px;
-  height: 16px;
-  flex: 0 0 auto;
-  fill: currentColor;
+.xp-company-logo {
+  display: block;
+  width: 72px;
+  max-width: 100%;
+  height: auto;
+  flex: 0 1 auto;
 }
 
 .entry-toggle-icon {
