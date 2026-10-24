@@ -283,11 +283,11 @@ export const dictionaries = {
     },
     contact: {
       eyebrow: "06 / CONTACT",
-      title: "Let’s talk about building better mobile software.",
+      title: "Get in touch",
       summary:
-        "I welcome thoughtful conversations about Flutter, mobile engineering, and building dependable product experiences.",
+        "Recruiters, companies, and fellow professionals are welcome to get in touch to discuss career opportunities, software development, and projects.",
       linksLabel: "Find me on",
-      links: { linkedin: "LinkedIn", github: "GitHub", email: "Email" },
+      links: { linkedin: "LinkedIn", github: "GitHub", email: "Send an email" },
     },
     footer: {
       note: "Mobile software engineering · Flutter & Dart",
@@ -469,11 +469,11 @@ export const dictionaries = {
     },
     contact: {
       eyebrow: "06 / CONTATO",
-      title: "Vamos conversar sobre como construir software mobile melhor.",
+      title: "Entre em contato",
       summary:
-        "Estou aberto a conversas sobre Flutter, engenharia mobile e a construção de experiências de produto confiáveis.",
+        "Recrutadores, empresas e profissionais são bem-vindos para conversar sobre oportunidades, desenvolvimento de software e projetos.",
       linksLabel: "Me encontre em",
-      links: { linkedin: "LinkedIn", github: "GitHub", email: "E-mail" },
+      links: { linkedin: "LinkedIn", github: "GitHub", email: "Enviar e-mail" },
     },
     footer: {
       note: "Engenharia de software mobile · Flutter e Dart",
@@ -655,11 +655,11 @@ export const dictionaries = {
     },
     contact: {
       eyebrow: "06 / KONTAKT",
-      title: "Lassen Sie uns über bessere mobile Software sprechen.",
+      title: "Kontakt aufnehmen",
       summary:
-        "Ich freue mich auf den fachlichen Austausch über Flutter, mobile Softwareentwicklung und zuverlässige Produkterlebnisse.",
+        "Recruiter, Unternehmen und Fachleute können mich gerne kontaktieren, um über berufliche Möglichkeiten, Softwareentwicklung und Projekte zu sprechen.",
       linksLabel: "Sie finden mich auf",
-      links: { linkedin: "LinkedIn", github: "GitHub", email: "E-Mail" },
+      links: { linkedin: "LinkedIn", github: "GitHub", email: "E-Mail senden" },
     },
     footer: {
       note: "Mobile-Softwareentwicklung · Flutter und Dart",

@@ -1221,11 +1221,51 @@ button:focus-visible {
   line-height: 1.7;
 }
 
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 24px;
+  margin-top: 30px;
+}
+
+.contact-email-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px 17px;
+  border: 1px solid var(--blue);
+  border-radius: var(--radius-control);
+  background: var(--blue-bright);
+  color: var(--background);
+  font-size: 15px;
+  font-weight: 650;
+  transition: background-color 160ms ease, border-color 160ms ease;
+}
+
+.contact-email-button:hover {
+  border-color: var(--signal);
+  background: var(--signal);
+}
+
+.contact-email-address {
+  color: var(--foreground);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 15px;
+  text-decoration: underline;
+  text-decoration-color: var(--line);
+  text-underline-offset: 4px;
+  user-select: text;
+  overflow-wrap: anywhere;
+}
+
 .contact-links {
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  margin-top: 30px;
+  margin-top: 24px;
 }
 
 .contact-links a {

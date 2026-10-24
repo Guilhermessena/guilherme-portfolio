@@ -153,15 +153,21 @@ export function ContactSection({ copy }: { copy: PortfolioCopy["contact"] }) {
         <div className="contact-copy">
           <h2 id="contact-title">{copy.title}</h2>
           <p>{copy.summary}</p>
-          {CONTACT_LINKS.some((link) => link.href) && (
-            <div className="contact-links" aria-label={copy.linksLabel}>
-              {CONTACT_LINKS.map((link) => link.href && (
-                <a key={link.type} href={link.href} target="_blank" rel="noreferrer">
-                  {copy.links[link.type]}<span aria-hidden="true">↗</span>
-                </a>
-              ))}
-            </div>
-          )}
+          <div className="contact-actions">
+            <a className="contact-email-button" href="mailto:guilhermedvsena@gmail.com">
+              {copy.links.email}<span aria-hidden="true">↗</span>
+            </a>
+            <a className="contact-email-address" href="mailto:guilhermedvsena@gmail.com">
+              guilhermedvsena@gmail.com
+            </a>
+          </div>
+          <div className="contact-links" aria-label={copy.linksLabel}>
+            {CONTACT_LINKS.map((link) => (
+              <a key={link.type} href={link.href} target="_blank" rel="noopener noreferrer">
+                {copy.links[link.type]}<span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
         </div>
         <span className="contact-ornament" aria-hidden="true">G.</span>
       </div>
@@ -169,8 +175,7 @@ export function ContactSection({ copy }: { copy: PortfolioCopy["contact"] }) {
   );
 }
 
-const CONTACT_LINKS: { type: "linkedin" | "github" | "email"; href: string | null }[] = [
-  { type: "linkedin", href: null },
-  { type: "github", href: null },
-  { type: "email", href: null },
+const CONTACT_LINKS: { type: "linkedin" | "github"; href: string }[] = [
+  { type: "linkedin", href: "https://www.linkedin.com/in/guilhermesena/" },
+  { type: "github", href: "https://github.com/Guilhermessena" },
 ];
