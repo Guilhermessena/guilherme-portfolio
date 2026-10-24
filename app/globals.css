@@ -766,8 +766,18 @@ button:focus-visible {
 }
 
 .entry-company {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   color: var(--blue-bright);
   font-size: 16px;
+}
+
+.xp-company-mark {
+  width: 15px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .entry-toggle-icon {
@@ -1242,15 +1252,29 @@ button:focus-visible {
   color: var(--background);
   font-size: 15px;
   font-weight: 650;
-  transition: background-color 160ms ease, border-color 160ms ease;
+  transition: background-color 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
-.contact-email-button:hover {
+.contact-email-button:hover,
+.contact-email-button:focus-visible {
   border-color: var(--signal);
   background: var(--signal);
+  transform: translateY(-1px);
+}
+
+.contact-email-button:active {
+  transform: translateY(0) scale(0.99);
+}
+
+.contact-icon {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .contact-email-address {
+  transition: color 160ms ease, text-decoration-color 160ms ease, transform 160ms ease;
   color: var(--foreground);
   font-family: var(--font-geist-mono), monospace;
   font-size: 15px;
@@ -1259,6 +1283,17 @@ button:focus-visible {
   text-underline-offset: 4px;
   user-select: text;
   overflow-wrap: anywhere;
+}
+
+.contact-email-address:hover,
+.contact-email-address:focus-visible {
+  color: var(--blue-bright);
+  text-decoration-color: var(--blue);
+  transform: translateY(-1px);
+}
+
+.contact-email-address:active {
+  transform: translateY(0) scale(0.99);
 }
 
 .contact-links {
@@ -1275,6 +1310,17 @@ button:focus-visible {
   gap: 9px;
   color: var(--blue-bright);
   font-size: 15px;
+  transition: color 160ms ease, transform 160ms ease;
+}
+
+.contact-links a:hover,
+.contact-links a:focus-visible {
+  color: var(--foreground);
+  transform: translateY(-1px);
+}
+
+.contact-links a:active {
+  transform: translateY(0) scale(0.99);
 }
 
 .contact-ornament {
