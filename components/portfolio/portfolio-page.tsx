@@ -10,6 +10,7 @@ import {
   WorkSection,
 } from "./content-sections";
 import { SiteHeader } from "./site-header";
+import { BackToTopButton, SectionJumpButton } from "./interactive-elements";
 
 export function PortfolioPage({
   copy,
@@ -22,11 +23,11 @@ export function PortfolioPage({
 }) {
   return (
     <>
-      <a className="skip-link" href="#main-content">
+      <SectionJumpButton className="skip-link" targetId="main-content" focusTarget>
         {copy.ui.skipToContent}
-      </a>
+      </SectionJumpButton>
       <SiteHeader copy={copy} locale={locale} />
-      <main id="main-content">
+      <main id="main-content" tabIndex={-1}>
         <HeroSection copy={copy} />
         <AboutSection copy={copy.about} />
         <ExperienceSection copy={copy.experience} />
@@ -38,8 +39,9 @@ export function PortfolioPage({
       <footer className="site-footer page-width">
         <span>{copy.footer.note}</span>
         <span>© {currentYear} Guilherme S.</span>
-        <a href="#top">{copy.footer.backToTop}</a>
+        <SectionJumpButton targetId="top">{copy.footer.backToTop}</SectionJumpButton>
       </footer>
+      <BackToTopButton label={copy.footer.backToTop} />
     </>
   );
 }

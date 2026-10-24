@@ -24,6 +24,7 @@ export type PortfolioCopy = {
     summary: string;
     primaryAction: string;
     secondaryAction: string;
+    contactAction: string;
     experienceLabel: string;
     mobileLabel: string;
     focusLabel: string;
@@ -40,6 +41,10 @@ export type PortfolioCopy = {
       deliveryValue: string;
       flow: string;
       coordinate: string;
+      coreDetail: string;
+      structureDetail: string;
+      qualityDetail: string;
+      deliveryDetail: string;
     };
   };
   about: {
@@ -65,7 +70,22 @@ export type PortfolioCopy = {
     professionalLabel: string;
     contextLabel: string;
     contributionLabel: string;
-    cases: { title: string; summary: string; contribution: string }[];
+    openDetailsLabel: string;
+    closeDialogLabel: string;
+    problemLabel: string;
+    approachLabel: string;
+    architectureLabel: string;
+    technologyLabel: string;
+    technologyFallback: string;
+    cases: {
+      title: string;
+      summary: string;
+      problem: string;
+      approach: string;
+      architecture: string;
+      contribution: string;
+      technologies: string[];
+    }[];
   };
   stack: {
     eyebrow: string;
@@ -117,6 +137,7 @@ export const dictionaries = {
         "I build mobile product features with Flutter and Dart, balancing clear architecture, useful tests, and the details that make software dependable.",
       primaryAction: "Explore my work",
       secondaryAction: "About me",
+      contactAction: "Get in touch",
       experienceLabel: "Software development",
       mobileLabel: "Focused on mobile",
       focusLabel: "Current focus",
@@ -133,6 +154,10 @@ export const dictionaries = {
         deliveryValue: "Release",
         flow: "FEATURE → RELEASE",
         coordinate: "DART / 001",
+        coreDetail: "Build mobile product features with Flutter and Dart.",
+        structureDetail: "Organize features with BLoC / Cubit.",
+        qualityDetail: "Use tests as part of dependable delivery.",
+        deliveryDetail: "Validate changes and prepare releases.",
       },
     },
     about: {
@@ -169,27 +194,54 @@ export const dictionaries = {
       professionalLabel: "PROFESSIONAL CASE STUDY",
       contextLabel: "Context & approach",
       contributionLabel: "Technical contribution",
+      openDetailsLabel: "Open case details",
+      closeDialogLabel: "Close case details",
+      problemLabel: "Problem",
+      approachLabel: "Technical approach",
+      architectureLabel: "Architecture & decisions",
+      technologyLabel: "Technologies",
+      technologyFallback: "Specific technologies are not attributed to this case in the public description.",
       cases: [
         {
           title: "A product module, built from scratch",
           summary:
             "Independently developed a product module from the ground up, from feature implementation through release-candidate validation for that module.",
+          problem: "A product module needed to be developed from the ground up.",
+          approach:
+            "Independently delivered module features and validated its release candidate.",
+          architecture:
+            "Business rules, technical discussions, code reviews, and automated tests informed delivery. Internal architecture details are not shared.",
           contribution:
             "Worked with business rules, technical discussions, code reviews, and automated tests throughout delivery.",
+          technologies: [],
         },
         {
           title: "Campaign updates without an app release",
           summary:
             "Developed a reusable promotional banner managed remotely through Adobe tooling, so campaign content could change without code changes or a new app release.",
+          problem:
+            "Campaign content needed to change without code changes or a new mobile app release.",
+          approach:
+            "Built a reusable promotional banner managed remotely through Adobe tooling, with impression and click tracking.",
+          architecture:
+            "Campaign content was managed remotely through a reusable banner component. Further internal architecture details are not shared.",
           contribution:
             "Included impression and click tracking to support campaign measurement and analytics dashboards.",
+          technologies: ["Adobe tooling"],
         },
         {
           title: "Clearer signals for incident investigation",
           summary:
             "Collaborated with other developers to standardize logging and improve error traceability in mobile software.",
+          problem:
+            "Incident investigations needed clearer error context and traceability.",
+          approach:
+            "Collaborated with other developers to standardize logging and improve error traceability.",
+          architecture:
+            "Logging was standardized as part of the observability work. Further internal architecture details are not shared.",
           contribution:
             "Used Dynatrace as part of the observability work supporting incident investigations.",
+          technologies: ["Dynatrace", "Logging"],
         },
       ],
     },
@@ -271,6 +323,7 @@ export const dictionaries = {
         "Desenvolvo funcionalidades para produtos mobile com Flutter e Dart, equilibrando arquitetura clara, testes úteis e os detalhes que tornam o software confiável.",
       primaryAction: "Conheça meu trabalho",
       secondaryAction: "Sobre mim",
+      contactAction: "Entre em contato",
       experienceLabel: "Desenvolvimento de software",
       mobileLabel: "Foco em mobile",
       focusLabel: "Foco atual",
@@ -287,6 +340,10 @@ export const dictionaries = {
         deliveryValue: "Release",
         flow: "FUNCIONALIDADE → RELEASE",
         coordinate: "DART / 001",
+        coreDetail: "Desenvolva funcionalidades de produto mobile com Flutter e Dart.",
+        structureDetail: "Organize funcionalidades com BLoC / Cubit.",
+        qualityDetail: "Use testes como parte de entregas confiáveis.",
+        deliveryDetail: "Valide mudanças e prepare releases.",
       },
     },
     about: {
@@ -323,27 +380,54 @@ export const dictionaries = {
       professionalLabel: "ESTUDO DE CASO PROFISSIONAL",
       contextLabel: "Contexto e abordagem",
       contributionLabel: "Contribuição técnica",
+      openDetailsLabel: "Abrir detalhes do caso",
+      closeDialogLabel: "Fechar detalhes do caso",
+      problemLabel: "Problema",
+      approachLabel: "Abordagem técnica",
+      architectureLabel: "Arquitetura e decisões",
+      technologyLabel: "Tecnologias",
+      technologyFallback: "Tecnologias específicas não são atribuídas publicamente a este caso.",
       cases: [
         {
           title: "Um módulo de produto desenvolvido do zero",
           summary:
             "Desenvolvi de forma independente um módulo de produto, da implementação das funcionalidades à validação de release candidate do próprio módulo.",
+          problem: "Um módulo de produto precisava ser desenvolvido do zero.",
+          approach:
+            "Desenvolvi as funcionalidades do módulo de forma independente e validei seu release candidate.",
+          architecture:
+            "Regras de negócio, discussões técnicas, revisões de código e testes automatizados orientaram a entrega. Detalhes da arquitetura interna não são divulgados.",
           contribution:
             "Atuei com regras de negócio, discussões técnicas, revisões de código e testes automatizados ao longo da entrega.",
+          technologies: [],
         },
         {
           title: "Campanhas atualizadas sem nova versão do app",
           summary:
             "Desenvolvi um componente reutilizável de banner promocional, gerenciado remotamente por ferramentas Adobe, permitindo atualizar campanhas sem mudanças de código ou uma nova versão do app.",
+          problem:
+            "O conteúdo das campanhas precisava mudar sem alterações no código ou uma nova versão do app mobile.",
+          approach:
+            "Desenvolvi um banner promocional reutilizável, gerenciado remotamente por ferramentas Adobe, com rastreamento de impressões e cliques.",
+          architecture:
+            "O conteúdo das campanhas era gerenciado remotamente por um componente reutilizável de banner. Outros detalhes da arquitetura interna não são divulgados.",
           contribution:
             "Incluí rastreamento de impressões e cliques para apoiar a mensuração das campanhas e dashboards analíticos.",
+          technologies: ["Ferramentas Adobe"],
         },
         {
           title: "Mais contexto para investigar incidentes",
           summary:
             "Colaborei com outros desenvolvedores para padronizar logs e melhorar a rastreabilidade de erros em software mobile.",
+          problem:
+            "As investigações de incidentes precisavam de mais contexto e rastreabilidade de erros.",
+          approach:
+            "Colaborei com outros desenvolvedores para padronizar logs e melhorar a rastreabilidade de erros.",
+          architecture:
+            "A padronização de logs fez parte do trabalho de observabilidade. Outros detalhes da arquitetura interna não são divulgados.",
           contribution:
             "Dynatrace fez parte do trabalho de observabilidade que apoiava as investigações de incidentes.",
+          technologies: ["Dynatrace", "Logging"],
         },
       ],
     },
@@ -425,6 +509,7 @@ export const dictionaries = {
         "Ich entwickle mobile Produktfunktionen mit Flutter und Dart und verbinde klare Architektur mit sinnvollen Tests und den Details, die Software zuverlässig machen.",
       primaryAction: "Meine Arbeit ansehen",
       secondaryAction: "Über mich",
+      contactAction: "Kontakt aufnehmen",
       experienceLabel: "Softwareentwicklung",
       mobileLabel: "Schwerpunkt Mobile",
       focusLabel: "Schwerpunkt",
@@ -441,6 +526,10 @@ export const dictionaries = {
         deliveryValue: "Release",
         flow: "FUNKTION → RELEASE",
         coordinate: "DART / 001",
+        coreDetail: "Mobile Produktfunktionen mit Flutter und Dart entwickeln.",
+        structureDetail: "Funktionen mit BLoC / Cubit strukturieren.",
+        qualityDetail: "Tests als Teil zuverlässiger Auslieferung einsetzen.",
+        deliveryDetail: "Änderungen validieren und Releases vorbereiten.",
       },
     },
     about: {
@@ -477,27 +566,54 @@ export const dictionaries = {
       professionalLabel: "BERUFLICHE FALLSTUDIE",
       contextLabel: "Kontext und Ansatz",
       contributionLabel: "Technischer Beitrag",
+      openDetailsLabel: "Falldetails öffnen",
+      closeDialogLabel: "Falldetails schließen",
+      problemLabel: "Problem",
+      approachLabel: "Technischer Ansatz",
+      architectureLabel: "Architektur und Entscheidungen",
+      technologyLabel: "Technologien",
+      technologyFallback: "Konkrete Technologien werden in der öffentlichen Beschreibung diesem Fall nicht zugeordnet.",
       cases: [
         {
           title: "Ein Produktmodul von Grund auf entwickelt",
           summary:
             "Ein Produktmodul eigenständig von Grund auf entwickelt, von der Implementierung bis zur Validierung des Release Candidates für dieses Modul.",
+          problem: "Ein Produktmodul musste von Grund auf entwickelt werden.",
+          approach:
+            "Modulfunktionen eigenständig umgesetzt und den Release Candidate validiert.",
+          architecture:
+            "Geschäftsregeln, technische Abstimmungen, Code-Reviews und automatisierte Tests prägten die Umsetzung. Interne Architekturdetails werden nicht veröffentlicht.",
           contribution:
             "Während der Umsetzung arbeitete ich mit Geschäftsregeln, technischen Abstimmungen, Code-Reviews und automatisierten Tests.",
+          technologies: [],
         },
         {
           title: "Kampagnen ohne App-Release aktualisieren",
           summary:
             "Eine wiederverwendbare Werbebanner-Komponente entwickelt, die über Adobe-Tools remote verwaltet wird. Kampagneninhalte lassen sich so ohne Codeänderung oder neues App-Release anpassen.",
+          problem:
+            "Kampagneninhalte sollten ohne Codeänderungen oder ein neues Mobile-App-Release geändert werden können.",
+          approach:
+            "Eine wiederverwendbare Werbebanner-Komponente mit Remote-Verwaltung über Adobe-Tools und Impression- sowie Klickmessung entwickelt.",
+          architecture:
+            "Die Kampagneninhalte wurden remote über eine wiederverwendbare Banner-Komponente verwaltet. Weitere interne Architekturdetails werden nicht veröffentlicht.",
           contribution:
             "Erfasst wurden Impressionen und Klicks, um die Kampagnenmessung und Analyse-Dashboards zu unterstützen.",
+          technologies: ["Adobe-Tools"],
         },
         {
           title: "Mehr Kontext bei der Untersuchung von Vorfällen",
           summary:
             "Gemeinsam mit anderen Entwicklern die Protokollierung vereinheitlicht und die Rückverfolgbarkeit von Fehlern in mobiler Software verbessert.",
+          problem:
+            "Bei der Untersuchung von Vorfällen waren mehr Fehlerkontext und Rückverfolgbarkeit erforderlich.",
+          approach:
+            "Gemeinsam mit anderen Entwicklern die Protokollierung vereinheitlicht und die Rückverfolgbarkeit von Fehlern verbessert.",
+          architecture:
+            "Die Standardisierung der Protokollierung war Teil der Observability-Arbeit. Weitere interne Architekturdetails werden nicht veröffentlicht.",
           contribution:
             "Dynatrace war Teil der Observability-Arbeit zur Unterstützung von Vorfalluntersuchungen.",
+          technologies: ["Dynatrace", "Logging"],
         },
       ],
     },

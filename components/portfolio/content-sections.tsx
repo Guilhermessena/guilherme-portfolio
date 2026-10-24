@@ -1,4 +1,5 @@
 import type { PortfolioCopy } from "../../app/[lang]/dictionaries";
+import { CaseStudyDialog } from "./interactive-elements";
 
 function SectionLabel({ children }: { children: string }) {
   return <p className="section-label">{children}</p>;
@@ -33,22 +34,27 @@ export function ExperienceSection({ copy }: { copy: PortfolioCopy["experience"] 
         <SectionLabel>{copy.eyebrow}</SectionLabel>
         <div className="section-content">
           <h2 id="experience-title">{copy.title}</h2>
-          <article className="experience-entry">
-            <div className="entry-marker" aria-hidden="true"><span /></div>
-            <div className="entry-heading">
-              <div>
-                <h3>{copy.role}</h3>
-                <p>{copy.company}</p>
-              </div>
+          <details className="experience-entry">
+            <summary className="entry-toggle">
+              <span className="entry-heading-copy">
+                <span className="entry-role" role="heading" aria-level={3}>{copy.role}</span>
+                <span className="entry-company">{copy.company}</span>
+              </span>
               <span className="entry-type">{copy.specialtyLabel}</span>
+              <span className="entry-toggle-icon" aria-hidden="true" />
+            </summary>
+            <div className="entry-marker" aria-hidden="true"><span /></div>
+            <div className="experience-details">
+              <div className="experience-details-inner">
+                <p className="entry-summary">{copy.summary}</p>
+                <ul className="responsibility-list">
+                  {copy.responsibilities.map((responsibility) => (
+                    <li key={responsibility}>{responsibility}</li>
+                  ))}
+                </ul>
+              </div>
             </div>
-            <p className="entry-summary">{copy.summary}</p>
-            <ul className="responsibility-list">
-              {copy.responsibilities.map((responsibility) => (
-                <li key={responsibility}>{responsibility}</li>
-              ))}
-            </ul>
-          </article>
+          </details>
         </div>
       </div>
     </section>
@@ -80,6 +86,7 @@ export function WorkSection({ copy }: { copy: PortfolioCopy["work"] }) {
                     <h4>{copy.contributionLabel}</h4>
                     <p>{caseStudy.contribution}</p>
                   </div>
+                  <CaseStudyDialog copy={copy} caseStudy={caseStudy} />
                 </div>
               </article>
             ))}

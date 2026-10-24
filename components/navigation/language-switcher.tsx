@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import type { Locale } from "../../i18n/locales";
 import { locales } from "../../i18n/locales";
@@ -27,7 +27,6 @@ export function LanguageSwitcher({
   currentLocale: Locale;
   label: string;
 }) {
-  const router = useRouter();
   const pathname = usePathname();
 
   useEffect(() => {
@@ -51,7 +50,7 @@ export function LanguageSwitcher({
 
     const referenceY = window.innerHeight * 0.3;
     const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-    const maxScrollY = document.documentElement.scrollHeight - window.innerHeight;
+    const maxScrollY = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
     const scrollY = sectionTop + section.offsetHeight * snapshot.progress - referenceY;
 
     window.scrollTo({
@@ -80,13 +79,12 @@ export function LanguageSwitcher({
               return;
             }
 
-            pendingScrollSnapshot =
-              locale === currentLocale ? null : captureScrollSnapshot(`/${locale}`);
-
-            if (window.location.hash) {
-              event.preventDefault();
-              router.push(`/${locale}${window.location.hash}`, { scroll: false });
+            if (locale === currentLocale) {
+              pendingScrollSnapshot = null;
+              return;
             }
+
+            pendingScrollSnapshot = captureScrollSnapshot(`/${locale}`);
           }}
         >
           {languageNames[locale]}
